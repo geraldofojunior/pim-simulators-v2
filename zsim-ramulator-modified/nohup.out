@@ -1,0 +1,116 @@
+[H] Starting zsim, built Thu Apr 26 17:03:00 CEST 2018 (rev master:108:5242e40:clean)
+[H] Creating global segment, 1024 MBs
+[H] Global segment shmid = 10190861
+[H] Deadlock detection ON
+[S 0] Started instance
+[S 0] Limiting concurrent threads to 8
+[S 0] Started RR scheduler, quantum=10000 phases
+[S 0] Hierarchy: [ l1d-0 ] -> l2prefetcher-0
+[S 0] Hierarchy: [ l1d-1 ] -> l2prefetcher-1
+[S 0] Hierarchy: [ l1d-2 ] -> l2prefetcher-2
+[S 0] Hierarchy: [ l1d-3 ] -> l2prefetcher-3
+[S 0] Hierarchy: [ l1d-4 ] -> l2prefetcher-4
+[S 0] Hierarchy: [ l1d-5 ] -> l2prefetcher-5
+[S 0] Hierarchy: [ l1d-6 ] -> l2prefetcher-6
+[S 0] Hierarchy: [ l1d-7 ] -> l2prefetcher-7
+[S 0] Hierarchy: [ l1d-8 ] -> l2prefetcher-8
+[S 0] Hierarchy: [ l1d-9 ] -> l2prefetcher-9
+[S 0] Hierarchy: [ l1d-10 ] -> l2prefetcher-10
+[S 0] Hierarchy: [ l1d-11 ] -> l2prefetcher-11
+[S 0] Hierarchy: [ l1d-12 ] -> l2prefetcher-12
+[S 0] Hierarchy: [ l1d-13 ] -> l2prefetcher-13
+[S 0] Hierarchy: [ l1d-14 ] -> l2prefetcher-14
+[S 0] Hierarchy: [ l1d-15 ] -> l2prefetcher-15
+[S 0] Hierarchy: [ l1i-0 l2prefetcher-0 ] -> l2-0
+[S 0] Hierarchy: [ l1i-1 l2prefetcher-1 ] -> l2-1
+[S 0] Hierarchy: [ l1i-2 l2prefetcher-2 ] -> l2-2
+[S 0] Hierarchy: [ l1i-3 l2prefetcher-3 ] -> l2-3
+[S 0] Hierarchy: [ l1i-4 l2prefetcher-4 ] -> l2-4
+[S 0] Hierarchy: [ l1i-5 l2prefetcher-5 ] -> l2-5
+[S 0] Hierarchy: [ l1i-6 l2prefetcher-6 ] -> l2-6
+[S 0] Hierarchy: [ l1i-7 l2prefetcher-7 ] -> l2-7
+[S 0] Hierarchy: [ l1i-8 l2prefetcher-8 ] -> l2-8
+[S 0] Hierarchy: [ l1i-9 l2prefetcher-9 ] -> l2-9
+[S 0] Hierarchy: [ l1i-10 l2prefetcher-10 ] -> l2-10
+[S 0] Hierarchy: [ l1i-11 l2prefetcher-11 ] -> l2-11
+[S 0] Hierarchy: [ l1i-12 l2prefetcher-12 ] -> l2-12
+[S 0] Hierarchy: [ l1i-13 l2prefetcher-13 ] -> l2-13
+[S 0] Hierarchy: [ l1i-14 l2prefetcher-14 ] -> l2-14
+[S 0] Hierarchy: [ l1i-15 l2prefetcher-15 ] -> l2-15
+[S 0] Hierarchy: [ l2-0 l2-1 l2-2 l2-3 l2-4 l2-5 l2-6 l2-7 l2-8 l2-9 l2-10 l2-11 l2-12 l2-13 l2-14 l2-15 ] -> l3-0b0..l3-0b5
+Generating traces in the core
+Generating traces in the core
+Generating traces in the core
+Generating traces in the core
+Generating traces in the core
+Generating traces in the core
+Generating traces in the core
+Generating traces in the core
+Generating traces in the core
+Generating traces in the core
+Generating traces in the core
+Generating traces in the core
+Generating traces in the core
+Generating traces in the core
+Generating traces in the core
+Generating traces in the core
+[S 0] Initialized system
+[S 0] HDF5 backend: Opening /home/safari/zsim-ramulator/zsim-ramulator/zsim.h5
+[S 0] HDF5 backend: Created table, 9544 bytes/record, 110 records/write
+[S 0] HDF5 backend: Opening /home/safari/zsim-ramulator/zsim-ramulator/zsim-ev.h5
+[S 0] HDF5 backend: Created table, 9544 bytes/record, 14 records/write
+[S 0] HDF5 backend: Opening /home/safari/zsim-ramulator/zsim-ramulator/zsim-cmp.h5
+[S 0] HDF5 backend: Created table, 2464 bytes/record, 1 records/write
+[S 0] Initialization complete
+[S 0] Started process, PID 1585
+[S 0] procMask: 0x0
+[S 0] [0] Adjusting clocks, domain 0, de-ffwd 0
+[S 0] vDSO info initialized
+[H] Attached to global heap
+[S 0] FF thread 0 starting
+[S 0] Started contention simulation thread 0
+[S 0] FF control Thread TID 1588
+[S 0] Started scheduler watchdog thread
+Disabling TMVP because tiles are used.
+Disabling WPP because tiles were enabled.
+Compiled: INTEL, flags: MMX SSE SSE2
+Detected: INTEL, flags: MMX SSE SSE2 SSE3 SSSE3
+Available: sse2(2) 
+In use: sse2(2) 
+Input: /home/safari/kvazaar/videos/Kimono1_1920x1080_24.yuv, output: out.hevc
+  Video size: 1920x1080 (input=1920x1080)
+[S 0] FF thread 4 starting
+[S 0] ROI_BEGIN, exiting fast-forward
+[S 0] [0] Adjusting clocks, domain 0, de-ffwd 1
+[S 0] Thread 0 starting
+[S 0] Thread 4 starting
+[S 0] Detected possible stall due to fake leaves (1 current)
+[S 0]  [0/0] accept (202) @ 0x7fffe2fc866e
+[S 0] Blacklisting from future fake leaves: [0] accept @ 0x7fffe2fc866e | arg0 0x7a25a0 arg1 0x80
+POC    0 QP 27 (I-frame)     511168 bits PSNR Y 41.7142 U 42.7471 V 44.1493
+POC    1 QP 27 (P-frame)     234360 bits PSNR Y 40.8331 U 41.9737 V 43.5382 [L0 0 ] [L1 ]
+POC    2 QP 27 (P-frame)     268680 bits PSNR Y 40.6114 U 41.8232 V 43.3584 [L0 1 ] [L1 ]
+POC    3 QP 27 (P-frame)     272152 bits PSNR Y 40.4905 U 41.8153 V 43.3007 [L0 2 ] [L1 ]
+POC    4 QP 27 (P-frame)     267728 bits PSNR Y 40.4109 U 41.7448 V 43.2173 [L0 3 ] [L1 ]
+POC    5 QP 27 (P-frame)     267680 bits PSNR Y 40.3480 U 41.7355 V 43.1714 [L0 4 ] [L1 ]
+POC    6 QP 27 (P-frame)     258800 bits PSNR Y 40.3588 U 41.7266 V 43.1243 [L0 5 ] [L1 ]
+POC    7 QP 27 (P-frame)     253504 bits PSNR Y 40.4134 U 41.7284 V 43.1189 [L0 6 ] [L1 ]
+POC    8 QP 27 (P-frame)     250608 bits PSNR Y 40.4982 U 41.7694 V 43.2157 [L0 7 ] [L1 ]
+[S 0] Thread 4 finished
+POC    9 QP 27 (P-frame)     243432 bits PSNR Y 40.5261 U 41.7059 V 43.1318 [L0 8 ] [L1 ]
+[S 0] ROI_END, entering fast-forward
+[S 0] Thread 0 entering fast-forward (from syscall exit)
+ Processed 10 frames,    2828112 bits AVG PSNR Y 40.6204 U 41.8770 V 43.3326
+ Total CPU time: 2448.506 s.
+ Encoding time: 2448.103 s.
+ Encoding wall time: 15.441 s.
+ Encoding CPU usage: 15854.13%
+ FPS: 0.65
+[HOOKS] ROI begin
+[HOOKS] ROI end
+[S 0] Shadow/NOP thread 0 finished
+[S 0] Finished, code 0
+[S 0] Dumping termination stats
+[S 0] Finished scheduler watchdog thread
+[H] Child 1584 done
+[H] All children done, exiting
