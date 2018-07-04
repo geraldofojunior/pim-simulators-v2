@@ -1,0 +1,12 @@
+PARAMETERS:
+*number-cores
+*trace_format = [pisa|zsim]
+
+HOW TO RUN (general exeample): 
+1) ./ramulator --config HMC-Configs/HMC-config.cfg --mode=cpu --stats stats.file.name --trace trace.name --trace_format=zsim --number-cores=4
+
+2) IN CASE OF INFINITY LLC CACHE SIZE
+./ramulator --config HMC-Configs/HMC-Configs/HMC-config-infinityLLC.cfg --mode=cpu --stats stats.file.name --trace trace.name --trace_format=zsim --number-cores=4
+
+3) IN CASE OF NO CACHES
+./ramulator --config HMC-Configs/HMC-Configs/HMC-config-noCaches.cfg --mode=cpu --stats stats.file.name --trace trace.name --trace_format=zsim --number-cores=4
