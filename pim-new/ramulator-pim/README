@@ -1,0 +1,8 @@
+PARAMETERS:
+*pim-cache-lines (one line is 64 bytes)
+*pim-org [inOrder | outOrder]
+*pim-core-count
+*trace_format = [pisa|zsim]
+
+HOW TO RUN: 
+./ramulator --config HMC-Configs/HMC-config.cfg --mode=cpu --stats stats.file.name --trace trace.name --pim-cache-lines=512 --pim-org=inOrder --pim-core-count=16 --trace_format=pisa
