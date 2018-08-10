@@ -731,7 +731,7 @@ void Core::update_lru(unsigned index_number, unsigned way_number ){
 }
 
 bool Core::check_cache_hit(long addr){
-    unsigned offset = 5;
+    unsigned offset = 6;
     int index_number = addr >> offset;
     int index_size = log2(number_cache_lines);
     long lbits = (1 << index_size) - 1;
@@ -760,7 +760,7 @@ bool Core::has_reached_limit() {
 
 void Core::insert_cache_line(long addr){
     int insert_line;
-    unsigned offset = 5;
+    unsigned offset = 6;
     int index_number = addr >> offset;
     int index_size = log2(number_cache_lines);
     long lbits = (1 << index_size) - 1;
@@ -1056,33 +1056,58 @@ bool Trace::get_pisa_request(long& bubble_cnt, long& req_addr, Request::Type& re
 
 bool Trace::get_zsim_request(long& bubble_cnt, long& req_addr, Request::Type& req_type, unsigned& cpu_id){
     string linebuffer;
-    //cerr << "Here get szim trace 0 \n";
+    string linebuffer;
+
 
     if(getline(file, linebuffer)){
-        //cerr << "Here get szim trace 1 \n";
-
         if (linebuffer.length() == 0) return false;
         vector<string> split = split_str(linebuffer);
         line l;
-        l.threadID = std::stoi(split[0],nullptr,10);
-        l.processorID = std::stoi(split[1],nullptr,10);
-        if(split[2] != "-")
-            l.cycleNum = std::stoi(split[2],nullptr,10);
-        else
-            l.cycleNum = 0;
-        l.type = split[3];
-        l.addr  = std::stoul(split[4], nullptr, 10);
+        try{
+            if(split.size() < 5){
+                req_addr = -1;
+                return true;
+            }
+            int type_position = 0;
+            for(int i = 0; i < split.size(); i++){
+                if((split[i] == "L") || (split[i] == "S") || (split[i] == "P") || (split[i] == "I")){
+                    type_position = i;
+                    break;
+                }
+            }
+            if(type_position != 0){
+                l.threadID = std::stoi(split[type_position - 3],nullptr,10);
+                l.processorID = std::stoi(split[type_position - 2],nullptr,10);
+                if(l.processorID > 512){
+                    req_addr = -1;
+                    return true;
+                }
+                if(split[type_position - 1] != "-")
+                    l.cycleNum = std::stoi(split[type_position - 1],nullptr,10);
+                else
+                    l.cycleNum = 0;
+                l.type = split[type_position];
+                l.addr  = std::stoul(split[type_position + 1], nullptr, 10);
 
-       // cerr << "Here get szim trace 2 \n";
+                bubble_cnt = l.cycleNum;
+                req_addr = l.addr;
+                if (l.type =="L") req_type = Request::Type::READ;
+                else if (l.type == "S") req_type = Request::Type::WRITE;
+                else if (l.type == "I") req_type = Request::Type::INSTRUCTION;
 
-        bubble_cnt = l.cycleNum;
-        req_addr = l.addr;
-        if (l.type =="L") req_type = Request::Type::READ;
-        else if (l.type == "S") req_type = Request::Type::WRITE;
-        else if (l.type == "I") req_type = Request::Type::INSTRUCTION;
-
-        cpu_id = l.processorID;
-        //cerr << "Here get szim trace 3 \n";
+                cpu_id = l.processorID;
+            }
+            else{
+                cout << linebuffer << endl;
+                req_addr = -1;
+                return true;
+            }
+        }
+        catch(std::exception e){
+            cout << linebuffer << endl;
+            req_addr = -1;
+            return true;
+        }
 
         return true;
       }

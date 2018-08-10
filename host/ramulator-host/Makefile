@@ -11,11 +11,11 @@ CXX := clang++-5.0
 # CXX := g++-5
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S), Linux)
-  CXXFLAGS := -O3 -std=c++11 -g -w -Wall -I/home/geraldo/Tools/ramulator-safari-dev/DRAMPower/src -L/home/geraldo/Tools/ramulator-safari-dev/DRAMPower/src
+  CXXFLAGS := -O3 -std=c++11 -g -Wall -w -I/home/geraldo/Tools/ramulator-safari-dev/DRAMPower/src -L/home/geraldo/Tools/ramulator-safari-dev/DRAMPower/src
   LDFLAGS := -lboost_program_options -ldrampowerxml -ldrampower -lxerces-c
 endif
 ifeq ($(UNAME_S), Darwin)
-  CXXFLAGS := -O3 -std=c++11 -g -Wall -I$(BOOST_PATH)/include
+  CXXFLAGS := -O3 -std=c++11 -g -Wall -w -I$(BOOST_PATH)/include
   LDFLAGS := -L$(BOOST_PATH)/lib -lboost_program_options
 endif
 
